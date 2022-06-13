@@ -29,7 +29,7 @@ const findMany = ({ filters: { color, max_duration, user_id } }) => {
   }
   if (user_id) {
     sqlValues.length ? (sql += " AND ") : (sql += " WHERE ");
-    sql += "user_id <= ?";
+    sql += "user_id = ?";
     sqlValues.push(user_id.id);
   }
 
